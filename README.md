@@ -1,7 +1,4 @@
 # finite-element
-Implementing the Finite Element method to numerically approximate solutions to PDEs
+This repository implements the Finite Element Method (FEM) to numerically approximate solutions to certain elliptic Partial Differential Equations, following the methodology defined in Professor Iain Smears' course, MATH0092: Variational Methods for Partial Differential Equations.
 
-works for neumann/dirichlet/robin conditions
-and only for elliptic pde of a certain form. Since this is only 1D, then these are essentially ODEs.
-</br>
-Currently only implemented P1 finite element approximation, could add higher degree of polynomial approximation later.
+The current implementation handles the one-dimensional case (Ordinary Differential Equations) and supports Dirichlet, Neumann, and Robin boundary conditions. The basis functions are implemented up to piecewise quadratic functions (P2).
