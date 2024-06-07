@@ -19,9 +19,9 @@ def phi(i, x, nodes, deriv=False):
         if not isinstance(i, int):
             raise TypeError(f"Variable 'i' must be an integer, got {i}")
         if not (0 <= i <= N+1):
-            raise ValueError(f"Variable 'i' must be an integer between 0 and N+1, got {i}")
+            raise ValueError(f"Variable 'i' must be an integer between 0 and {N+1}, got {i}")
 
-        if deriv == False:
+        if not deriv:
             if i == 0:
                 if nodes[0] <= x <= nodes[1]:
                     return 1 - (x-nodes[i])/h
@@ -32,7 +32,7 @@ def phi(i, x, nodes, deriv=False):
                     return 1 + (x-nodes[i])/h
                 else:
                     return 0
-            if 0 < i < N+1:
+            else:
                 if nodes[i-1] <= x <= nodes[i]:
                     return 1 + (x-nodes[i])/h
                 elif nodes[i] < x <= nodes[i+1]:
@@ -40,18 +40,18 @@ def phi(i, x, nodes, deriv=False):
                 else:
                     return 0
 
-        if deriv:
+        else:
             if i == 0:
                 if nodes[0] <= x <= nodes[1]:
                     return -1/h
                 else:
                     return 0
-            if i == N+1:
+            elif i == N+1:
                 if nodes[-2] <= x <= nodes[-1]:
                     return 1/h
                 else:
                     return 0
-            if 0 < i < N+1:
+            else:
                 if nodes[i-1] <= x <= nodes[i]:
                     return 1/h
                 elif nodes[i] < x <= nodes[i+1]:
@@ -74,19 +74,18 @@ def psi(i, x, nodes, deriv=False):
     """
     try:
         N=len(nodes)-2
-        h = 1/(N+1)
         if not isinstance(i, int):
             raise TypeError(f"Variable 'i' must be an integer, got {i}")
         if not (1 <= i <= N+1):
-            raise ValueError(f"Variable 'i' must be an integer between 1 and N+1, got {i}")
+            raise ValueError(f"Variable 'i' must be an integer between 1 and {N+1}, got {i}")
 
-        if deriv == False:
+        if not deriv:
             if nodes[i-1] <= x <= nodes[i]:
                 return (x-nodes[i-1])*(x-nodes[i])/2
             else:
                 return 0
 
-        if deriv:
+        else:
             if nodes[i-1] <= x <= nodes[i]:
                 return x-(nodes[i-1]+nodes[i])/2
             else:
