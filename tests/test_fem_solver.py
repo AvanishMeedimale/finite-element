@@ -1,4 +1,6 @@
-"""This module contains functions to test the FEMSolver class using various boundary conditions and problem setups."""
+"""This module contains functions to test the FEMSolver class using various boundary conditions
+and problem setups. The testing is done using the package pytest.
+"""
 
 import numpy as np
 from fem.fem_solver import FEMSolver

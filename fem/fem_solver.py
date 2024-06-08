@@ -1,6 +1,6 @@
 """Finite Element Method Solver
 
-This module provides a class `FEMSolver` for solving differential equations using 
+This module provides a class 'FEMSolver' for solving differential equations using 
 the finite element method.
 
 """
@@ -9,7 +9,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy import integrate
 from .boundary_conditions import LeftDirichletBC, RightDirichletBC
-from .utils import phi, psi
+from .basis_functions import phi, psi
 
 class FEMSolver:
     """Solver for Differential Equations using Finite Element Method
@@ -104,14 +104,14 @@ class FEMSolver:
         """Plot the solution obtained from solving the differential equation"""
 
         U = self.solve()
-        
+
         def u_h(x):
             approx = 0
-            for index, i in enumerate(self.linear_end_range):
+            for index, i in enumerate(self.linear_range):
                 approx += U[index] * phi(i, x, self.nodes)
             if self.quadratic != 0:
                 for i in range(1, self.N + 2):
-                    approx += U[len(self.linear_end_range) + i - 1] * psi(i, x, self.nodes)
+                    approx += U[len(self.linear_range) + i - 1] * psi(i, x, self.nodes)
             if self.is_left_dirichlet:
                 approx += self.leftbc.leftbc * phi(0, x, self.nodes)
             if self.is_right_dirichlet:
