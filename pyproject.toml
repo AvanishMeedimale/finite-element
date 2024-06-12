@@ -1,0 +1,15 @@
+[project]
+name = "pyFEMSolver"
+version = "0.0.1"
+authors = [
+  { name="AvanishMeedimale", email="avanish.meedimale@gmail.com" },
+  { name="sap6", email="sapcxi@gmail.com" },
+]
+description = "The finite element method to solve differential equations"
+readme = "README.md"
+requires-python = ">=3.10.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows",
+]
