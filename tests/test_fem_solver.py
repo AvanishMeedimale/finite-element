@@ -1,7 +1,11 @@
+"""This module contains functions to test the FEMSolver class using various boundary conditions
+and problem setups. The testing is done using the package pytest.
+"""
+
+import numpy as np
 from fem.fem_solver import FEMSolver
 from fem.ode import ODE
-from fem.boundary_conditions import *
-import numpy as np
+from fem.boundary_conditions import LeftDirichletBC, RightDirichletBC, LeftRobinBC, RightRobinBC
 
 def a_func(x):
     return -1
@@ -22,7 +26,8 @@ def test_homogenous_dirichlet_linear():
     bc2 = RightDirichletBC(0)
     solution = FEMSolver(ode,bc1,bc2,0)
     uh = solution.solve()
-    U = np.array([0.04131624, 0.07302963, 0.09545784, 0.10882553, 0.1132666, 0.10882553, 0.09545784, 0.07302963, 0.04131624])
+    U = np.array([0.04131624, 0.07302963, 0.09545784, 0.10882553, 0.1132666, 
+                  0.10882553, 0.09545784, 0.07302963, 0.04131624])
     assert np.allclose(U,uh)
 
 def test_homogenous_dirichlet_quadratic():
