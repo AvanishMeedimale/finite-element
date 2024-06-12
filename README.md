@@ -4,7 +4,7 @@ This repository implements the Finite Element Method (FEM) to numerically approx
 To familiarise yourself with how to method works and the core ideas on how it has been implemented, please refer to [**Finite_Element_Method_Tutorial.ipynb**](Finite_Element_Method_Tutorial.ipynb)
 </br>
 </br>
-To use the application, please use [**script.py**](script.py) and adjust the parameters according to your equation and boundary conditions.
+To test the application, please use [**script.py**](script.py) and adjust the parameters according to your equation and boundary conditions.
 
 _Note: The current implementation handles the one-dimensional case (Ordinary Differential Equations) and supports Dirichlet, Robin, and mixed boundary conditions. The basis functions are implemented up to piecewise quadratic functions (P2)._
 
