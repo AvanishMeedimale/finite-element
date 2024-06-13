@@ -12,7 +12,7 @@ pip install pyfemsolver
 To import all the classes and functions, refer to the example in [**script.py**](script.py) for usage instructions.
 
 ## Limitations
-The implementation follows the structure of the UCL course, which has imposed certain conditions required for a guaranteed solution. This conditions are necessary to invoke the Lax-Milgram theorem and guarantee a solution using the Finite Element Method:
+The implementation follows the structure of the UCL course, which has imposed certain conditions required for a guaranteed solution. These conditions are necessary to invoke the Lax-Milgram theorem and guarantee a solution using the Finite Element Method:
 - The differential equation must be _elliptic_.
 - PDE coefficients must be sufficiently smooth ($L^{\infty}$ for LHS and $L^{2}$ for RHS).
 - The bilinear form of the PDE's weak formulation must be coercive.
